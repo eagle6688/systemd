@@ -1,0 +1,10 @@
+[Unit]
+Description=A test service
+
+[Service]
+Type=simple
+EnvironmentFile=/home/service/systemd/test.config
+ExecStart=/home/service/systemd/main.sh
+
+[Install]
+WantedBy=multi-user.target
