@@ -1,31 +1,33 @@
+#!/bin/sh
 echo "Start main.sh"
 asd=Hello
 qwe=World
 zxc="I am Eagle!"
 message="I need sleep 3 seconds!"
 
-if [ $ASD ]
+if [ "$ASD" ]
 then
-    asd=$ASD
+    asd="$ASD"
 fi
 
-if [ $QWE ]
+if [ "$QWE" ]
 then
-    qwe=$QWE
+    qwe="$QWE"
 fi
 
-if [ $ZXC ]
+if [ "$ZXC" ]
 then
-    zxc=$ZXC
+    zxc="$ZXC"
 fi
 
 echo "$asd $qwe, ${zxc}"
+echo "$asd $qwe, ${zxc}" >> /home/service/systemd/test.txt
 
 while true
 do
 
 echo $message
-echo $message >> /home/service/systemd/text.txt
+echo $message >> /home/service/systemd/test.txt
 sleep 3s
 
 done
